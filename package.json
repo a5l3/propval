@@ -1,0 +1,15 @@
+{
+  "name": "property_valuation",
+  "version": "1.0.0",
+  "description": "Custom KNN algorithm for determining property valuations with custom load csv interface",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sash Nortier",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "shuffle-seed": "^1.1.6"
+  }
+}
