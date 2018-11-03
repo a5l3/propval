@@ -1,5 +1,6 @@
 const fs = require('fs'); 
 const _ = require('lodash'); 
+const shuffleSeed = require('shuffle-seed');
 
 
 // S14L182 helper function for dataColumns & labelColumns, extract column names from data set 
@@ -16,7 +17,8 @@ function loadCSV(
     { 
         converters = {}, 
         dataColumns = [],
-        labelColumns= [] 
+        labelColumns= [], 
+        shuffle = true
     }
     ) {                                                                                     // S14L181 set converts to an empty obj
     let data = fs.readFileSync(filename, { encoding: 'utf-8'}); 
@@ -45,6 +47,11 @@ function loadCSV(
     data.shift()
     labels.shift()
 
+    if (shuffle) {                                                                             // S14L183 
+        data = shuffleSeed.shuffle(data, 'hakunamatata');
+        labels = shuffleSeed.shuffle(labels, 'hakunamatata');
+    }
+
     console.log(data)
     console.log(labels) 
 }
@@ -54,5 +61,6 @@ loadCSV('data.csv', {
     labelColumns: ['passed'], 
     converters: {
         passed: val => (val === 'TRUE' ? true : false)                                          // S14L181 the key is the name of the header that will be passed this custom func 
-    }
+    }, 
+    shuffle: true
 });
