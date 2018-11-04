@@ -9,6 +9,7 @@
   "author": "Sash Nortier",
   "license": "ISC",
   "dependencies": {
+    "@tensorflow/tfjs-node": "^0.1.19",
     "lodash": "^4.17.11",
     "shuffle-seed": "^1.1.6"
   }
