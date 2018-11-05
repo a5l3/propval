@@ -7,7 +7,6 @@ function knn(features, labels, predictionPoint, k){
     // S4L57
     const {mean, variance} = tf.moments(features, 0); 
     const scaledPrediction = predictionPoint.sub(mean).div(variance.pow(0.5)); 
-
     
     return features
         .sub(mean)
