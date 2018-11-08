@@ -11,6 +11,8 @@ function extractColumns(data, columnNames) {
   return extracted;
 }
 
+// TODO: Create GUI Interface 
+
 module.exports = function loadCSV(
   filename,
   {
